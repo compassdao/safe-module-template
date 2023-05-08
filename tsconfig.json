@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "module": "esnext",
+    "outDir": "./build",
+    "rootDir": "./src",
+    "lib": ["ES2020", "DOM", "esnext"],
+    "target": "ES5",
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "downlevelIteration": true,
+    "declaration": true,
+    "preserveSymlinks": true,
+    "preserveWatchOutput": true
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": [
+    "src/**/*.test.ts",
+    "**/__mocks__/*",
+    "src/mocks/**",
+    "jest.setup.js"
+  ],
+  "files": ["./src/index.ts"]
+}
