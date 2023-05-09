@@ -1,4 +1,3 @@
-import { TemplatesConfig } from '../typings';
-export * from '../typings';
-export declare const templatesConfig: TemplatesConfig;
-export default templatesConfig;
+import { MasterController } from '../typings';
+export declare const templatesController: MasterController;
+export default templatesController;

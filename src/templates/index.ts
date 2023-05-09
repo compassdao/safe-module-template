@@ -1,21 +1,20 @@
-import polygonTemplates from "./polygon"
-import ethereumTemplates from "./ethereum"
-import goerliTemplates from "./goerli"
-import arbitrumTemplates from "./arbitrum"
-import optimismTemplates from "./optimism"
-import { TemplatesConfig } from '../typings'
+import polygonTemplatesController from "./polygon"
+import ethereumTemplatesController from "./ethereum"
+import goerliTemplatesController from "./goerli"
+import arbitrumTemplatesController from "./arbitrum"
+import optimismTemplatesController from "./optimism"
+import { MasterController } from '../typings'
+import { ChainId } from '../typings'
 
-export * from '../typings'
-
-export const templatesConfig: TemplatesConfig = {
+export const templatesController: MasterController = {
   open: true,
-  templates: [
-    ...polygonTemplates,
-    ...ethereumTemplates,
-    ...goerliTemplates,
-    ...arbitrumTemplates,
-    ...optimismTemplates
-  ],
+  templates: {
+    [ChainId.ETHEREUM]: ethereumTemplatesController,
+    [ChainId.ARBITRUM]: arbitrumTemplatesController,
+    [ChainId.GÖERLI]: goerliTemplatesController,
+    [ChainId.OPTIMISM]: optimismTemplatesController,
+    [ChainId.POLYGON]: polygonTemplatesController,
+  }
 }
 
-export default templatesConfig
+export default templatesController

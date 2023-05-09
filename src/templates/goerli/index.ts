@@ -2,6 +2,24 @@ import { uniCollectFeesTemplate } from "./template_uniCollectFees"
 import { uniDecreaseLPTemplate } from "./template_uniDecreaseLP"
 import { uniMintTemplate } from "./template_uniMint"
 
-export const goerliTemplates = [uniCollectFeesTemplate, uniDecreaseLPTemplate, uniMintTemplate]
+import { TemplatesController } from '../../typings'
 
-export default goerliTemplates
+export const goerliTemplatesController: TemplatesController = {
+    open: true,
+    templates: [
+        {
+            open: true,
+            ...uniCollectFeesTemplate
+        },
+        {
+            open: true,
+            ...uniDecreaseLPTemplate
+        },
+        {
+            open: true,
+            ...uniMintTemplate
+        },
+    ]
+}
+
+export default goerliTemplatesController

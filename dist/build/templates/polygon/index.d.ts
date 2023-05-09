@@ -1,2 +1,3 @@
-export declare const polygonTemplates: import("..").Template[];
-export default polygonTemplates;
+import { TemplatesController } from '../../typings';
+export declare const polygonTemplatesController: TemplatesController;
+export default polygonTemplatesController;

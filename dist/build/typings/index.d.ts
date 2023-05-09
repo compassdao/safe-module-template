@@ -28,7 +28,16 @@ export interface Template {
     contractAddress: string;
     functionsConfig: Array<FunctionConfig>;
 }
-export interface TemplatesConfig {
+export interface Controller {
     open?: boolean;
-    templates?: Array<Template>;
+}
+export interface TemplateController extends Template, Controller {
+}
+export interface TemplatesController extends Controller {
+    templates: Array<TemplateController>;
+}
+export interface MasterController extends Controller {
+    templates: {
+        [chainId: number]: TemplatesController;
+    };
 }

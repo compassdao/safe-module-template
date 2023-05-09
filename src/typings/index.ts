@@ -20,14 +20,10 @@ export interface FunctionParams {
     comparison?: Comparison
 }
 
-
-
 export interface FunctionConfig {
     sighash: string,
     params?: Array<FunctionParams>
 }
-
-
 
 export interface Template {
     id: string,
@@ -37,7 +33,18 @@ export interface Template {
     functionsConfig: Array<FunctionConfig>
 }
 
-export interface TemplatesConfig {
+export interface Controller {
     open?: boolean
-    templates?: Array<Template>
-  }
+}
+
+export interface TemplateController extends Template, Controller { }
+
+export interface TemplatesController extends Controller {
+    templates: Array<TemplateController>
+}
+
+export interface MasterController extends Controller {
+    templates: {
+        [chainId: number]: TemplatesController
+    }
+}

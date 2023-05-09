@@ -1,2 +1,3 @@
-export declare const ethereumTemplates: import("..").Template[];
-export default ethereumTemplates;
+import { TemplatesController } from '../../typings';
+export declare const optimismTemplatesController: TemplatesController;
+export default optimismTemplatesController;

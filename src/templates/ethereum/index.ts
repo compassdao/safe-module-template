@@ -10,16 +10,48 @@ import { aave3DepositTemplate } from "./template_aave3Deposit"
 import { aave3RepayTemplate } from "./template_aave3Repay"
 import { aave3WithdrawTemplate } from "./template_aave3Withdraw"
 
-export const ethereumTemplates = [
-  uniCollectFeesTemplate,
-  uniDecreaseLPTemplate,
-  uniMintTemplate,
-  aave2DepositTemplate,
-  aave2RepayTemplate,
-  aave2WithdrawTemplate,
-  aave3DepositTemplate,
-  aave3RepayTemplate,
-  aave3WithdrawTemplate,
-]
+import { TemplatesController } from '../../typings'
 
-export default ethereumTemplates
+export const ethereumTemplatesController: TemplatesController = {
+  open: true,
+  templates: [
+    {
+      open: true,
+      ...uniCollectFeesTemplate
+    },
+    {
+      open: true,
+      ...uniDecreaseLPTemplate
+    },
+    {
+      open: true,
+      ...uniMintTemplate
+    },
+    {
+      open: true,
+      ...aave2DepositTemplate
+    },
+    {
+      open: true,
+      ...aave2RepayTemplate
+    },
+    {
+      open: true,
+      ...aave2WithdrawTemplate
+    },
+    {
+      open: true,
+      ...aave3DepositTemplate
+    },
+    {
+      open: true,
+      ...aave3RepayTemplate
+    },
+    {
+      open: true,
+      ...aave3WithdrawTemplate
+    },
+  ]
+}
+
+export default ethereumTemplatesController

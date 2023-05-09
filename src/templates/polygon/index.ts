@@ -10,18 +10,48 @@ import { aave2DepositTemplate } from "./template_aave2Deposit"
 import { aave2RepayTemplate } from "./template_aave2Repay"
 import { aave2WithdrawTemplate } from "./template_aave2Withdraw"
 
-export const polygonTemplates = [
-  uniCollectFeesTemplate,
-  uniDecreaseLPTemplate,
-  uniMintTemplate,
-  // V3
-  aave3DepositTemplate,
-  aave3RepayTemplate,
-  aave3WithdrawTemplate,
-  // V2
-  aave2DepositTemplate,
-  aave2RepayTemplate,
-  aave2WithdrawTemplate,
-]
+import { TemplatesController } from '../../typings'
 
-export default polygonTemplates
+
+export const polygonTemplatesController: TemplatesController = {
+  open: true,
+  templates: [
+    {
+      open: true,
+      ...uniCollectFeesTemplate
+    },
+    {
+      open: true,
+      ...uniDecreaseLPTemplate
+    },
+    {
+      open: true,
+      ...uniMintTemplate
+    },
+    {
+      open: true,
+      ...aave3DepositTemplate
+    },
+    {
+      open: true,
+      ...aave3RepayTemplate
+    },
+    {
+      open: true,
+      ...aave3WithdrawTemplate
+    },
+    {
+      open: true,
+      ...aave2DepositTemplate
+    },
+    {
+      open: true,
+      ...aave2RepayTemplate
+    },
+    {
+      open: true,
+      ...aave2WithdrawTemplate
+    },
+  ]
+}
+export default polygonTemplatesController
