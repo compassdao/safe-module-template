@@ -23,7 +23,7 @@ export interface FunctionParams {
 
 export interface EthValue {
     value?: string,
-    comparison?: Comparison
+    comparison?: Comparison.Lte
 }
 
 export interface FunctionConfig {

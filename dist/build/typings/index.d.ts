@@ -15,11 +15,17 @@ export interface FunctionParams {
     value?: string;
     autoFillingSafeAddress?: boolean;
     require?: boolean;
+    const?: boolean;
     comparison?: Comparison;
+}
+export interface EthValue {
+    value?: string;
+    comparison?: Comparison.Lte;
 }
 export interface FunctionConfig {
     sighash: string;
     params?: Array<FunctionParams>;
+    ethValue?: EthValue;
 }
 export interface Template {
     id: string;
