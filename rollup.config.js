@@ -4,7 +4,10 @@ import typescript from "@rollup/plugin-typescript";
 import { nodeResolve } from "@rollup/plugin-node-resolve";
 import { uglify } from 'rollup-plugin-uglify'
 import { terser } from 'rollup-plugin-terser';
+import alias from 'rollup-plugin-alias';
+import path from 'path'
 
+const pathResolve = p => path.resolve(__dirname, p)
 
 export default {
     input: 'src/index.ts',
@@ -17,6 +20,11 @@ export default {
         commonjs(),
         nodeResolve(),
         typescript(),
+        alias({
+            entries: {
+                '@': pathResolve('src')
+            }
+        }),
         uglify(),
         terser(),
     ],

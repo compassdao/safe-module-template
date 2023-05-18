@@ -1,3 +1,3 @@
-export * from './templates';
-export * from './typings/';
-export * from './utils';
+export * from './templates/index';
+export * from './typings/index';
+export * from './utils/index';

@@ -1,56 +1,63 @@
-import { uniCollectFeesTemplate } from "./template_uniCollectFees"
-import { uniDecreaseLPTemplate } from "./template_uniDecreaseLP"
-import { uniMintTemplate } from "./template_uniMint"
 
-import { aave2DepositTemplate } from "./template_aave2Deposit"
-import { aave2RepayTemplate } from "./template_aave2Repay"
-import { aave2WithdrawTemplate } from "./template_aave2Withdraw"
+import { uniCollectFeesTemplate, uniDecreaseLPTemplate, uniMintTemplate } from '@/templates/ethereum/uniswap/index'
+import {
+  aave2DepositTemplate,
+  aave2RepayTemplate,
+  aave2WithdrawTemplate,
+  aave3DepositTemplate,
+  aave3RepayTemplate,
+  aave3WithdrawTemplate
+} from '@/templates/ethereum/aave/index'
+import { TemplatesController } from '@/typings/index'
 
-import { aave3DepositTemplate } from "./template_aave3Deposit"
-import { aave3RepayTemplate } from "./template_aave3Repay"
-import { aave3WithdrawTemplate } from "./template_aave3Withdraw"
+const uni = [
+  {
+    open: true,
+    ...uniCollectFeesTemplate
+  },
+  {
+    open: true,
+    ...uniDecreaseLPTemplate
+  },
+  {
+    open: true,
+    ...uniMintTemplate
+  },
+]
 
-import { TemplatesController } from '../../typings'
+const aave = [
+  {
+    open: true,
+    ...aave2DepositTemplate
+  },
+  {
+    open: true,
+    ...aave2RepayTemplate
+  },
+  {
+    open: true,
+    ...aave2WithdrawTemplate
+  },
+  {
+    open: true,
+    ...aave3DepositTemplate
+  },
+  {
+    open: true,
+    ...aave3RepayTemplate
+  },
+  {
+    open: true,
+    ...aave3WithdrawTemplate
+  },
+]
+
 
 export const ethereumTemplatesController: TemplatesController = {
   open: true,
   templates: [
-    {
-      open: true,
-      ...uniCollectFeesTemplate
-    },
-    {
-      open: true,
-      ...uniDecreaseLPTemplate
-    },
-    {
-      open: true,
-      ...uniMintTemplate
-    },
-    {
-      open: true,
-      ...aave2DepositTemplate
-    },
-    {
-      open: true,
-      ...aave2RepayTemplate
-    },
-    {
-      open: true,
-      ...aave2WithdrawTemplate
-    },
-    {
-      open: true,
-      ...aave3DepositTemplate
-    },
-    {
-      open: true,
-      ...aave3RepayTemplate
-    },
-    {
-      open: true,
-      ...aave3WithdrawTemplate
-    },
+    ...uni,
+    ...aave,
   ]
 }
 

@@ -1,24 +1,25 @@
-import { uniCollectFeesTemplate } from "./template_uniCollectFees"
-import { uniDecreaseLPTemplate } from "./template_uniDecreaseLP"
-import { uniMintTemplate } from "./template_uniMint"
+import { uniCollectFeesTemplate, uniDecreaseLPTemplate, uniMintTemplate } from '@/templates/goerli/uniswap/index'
+import { TemplatesController } from '@/typings/index'
 
-import { TemplatesController } from '../../typings'
+const uni = [
+    {
+        open: true,
+        ...uniCollectFeesTemplate
+    },
+    {
+        open: true,
+        ...uniDecreaseLPTemplate
+    },
+    {
+        open: true,
+        ...uniMintTemplate
+    },
+]
 
 export const goerliTemplatesController: TemplatesController = {
     open: true,
     templates: [
-        {
-            open: true,
-            ...uniCollectFeesTemplate
-        },
-        {
-            open: true,
-            ...uniDecreaseLPTemplate
-        },
-        {
-            open: true,
-            ...uniMintTemplate
-        },
+        ...uni,
     ]
 }
 

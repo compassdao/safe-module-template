@@ -1,10 +1,9 @@
-import polygonTemplatesController from "./polygon"
-import ethereumTemplatesController from "./ethereum"
-import goerliTemplatesController from "./goerli"
-import arbitrumTemplatesController from "./arbitrum"
-import optimismTemplatesController from "./optimism"
-import { MasterController } from '../typings'
-import { ChainId } from '../typings'
+import polygonTemplatesController from "./polygon/index"
+import ethereumTemplatesController from "./ethereum/index"
+import goerliTemplatesController from "./goerli/index"
+import arbitrumTemplatesController from "./arbitrum/index"
+import optimismTemplatesController from "./optimism/index"
+import { MasterController, ChainId } from '../typings/index'
 
 export const templatesController: MasterController = {
   open: true,

@@ -1,5 +1,5 @@
-import { TemplateController, MasterController, ChainId } from '../typings'
-import { templatesController } from '..'
+import { TemplateController, MasterController, ChainId } from '@/typings/index'
+import { templatesController } from '../index'
 
 export function generateUniqueId(): string {
   const getId = () => {

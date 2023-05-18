@@ -3,8 +3,8 @@
 
 ## e.g.
 ```ts
-import { Template, ChainId, Comparison } from '../../typings'
-import { generateUniqueId } from '../../utils/generateUniqueId'
+import { Template, ChainId, Comparison } from '@/typings'
+import { generateUniqueId } from '@/utils'
 
 export const aave3DepositTemplate: Template = {
   /**
