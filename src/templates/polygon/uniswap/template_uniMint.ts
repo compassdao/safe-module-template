@@ -13,6 +13,7 @@ export const uniMintTemplate: Template = {
         {
           index: 9,
           autoFillingSafeAddress: true,
+          require: true,
         },
       ],
     },

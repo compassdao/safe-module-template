@@ -12,6 +12,7 @@ export const aave2RepayTemplate: Template = {
         {
           index: 3,
           autoFillingSafeAddress: true,
+          require: true,
         },
       ],
     },

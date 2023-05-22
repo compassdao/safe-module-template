@@ -13,6 +13,7 @@ export const aave2WithdrawTemplate: Template = {
         {
           index: 2,
           autoFillingSafeAddress: true,
+          require: true,
         },
       ],
     },

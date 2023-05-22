@@ -12,8 +12,8 @@ export const uniMintTemplate: Template = {
       params: [
         {
           index: 9,
-          value: "",
           autoFillingSafeAddress: true,
+          require: true,
         },
       ],
     },

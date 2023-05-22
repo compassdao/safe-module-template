@@ -13,6 +13,7 @@ export const uniCollectFeesTemplate: Template = {
         {
           index: 1,
           autoFillingSafeAddress: true,
+          require: true,
         },
       ],
     },

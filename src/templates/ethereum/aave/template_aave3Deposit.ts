@@ -12,6 +12,7 @@ export const aave3DepositTemplate: Template = {
         {
           index: 2,
           autoFillingSafeAddress: true,
+          require: true,
         },
 
       ],

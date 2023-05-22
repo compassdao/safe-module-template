@@ -16,6 +16,7 @@ export const aave3WithdrawTemplate: Template = {
         {
           index: 2,
           autoFillingSafeAddress: true,
+          require: true,
         },
       ],
     },

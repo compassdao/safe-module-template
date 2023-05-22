@@ -13,6 +13,7 @@ export const uniDecreaseLPTemplate: Template = {
         {
           index: 1,
           autoFillingSafeAddress: true,
+          require: true,
         },
       ],
     },

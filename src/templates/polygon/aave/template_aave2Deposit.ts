@@ -12,11 +12,13 @@ export const aave2DepositTemplate: Template = {
       params: [
         {
           index: 2,
-          autoFillingSafeAddress: true,
+          // autoFillingSafeAddress: true,
+          require: true,
         },
         {
           index: 3,
-          value: "0",
+          value: "1",
+          require: false
         },
       ],
     },
