@@ -18,6 +18,7 @@ export const aave3DepositTemplate: Template = {
         {
           index: 3,
           value: "0",
+          require: false
         },
       ],
     },

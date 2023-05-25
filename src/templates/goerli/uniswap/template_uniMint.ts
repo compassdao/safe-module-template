@@ -11,6 +11,14 @@ export const uniMintTemplate: Template = {
       sighash: "0x88316456",
       params: [
         {
+          index: 0,
+          require: false,
+        },
+        {
+          index: 1,
+          require: false,
+        },
+        {
           index: 9,
           autoFillingSafeAddress: true,
         },
