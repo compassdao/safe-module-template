@@ -1,6 +1,7 @@
 import {
   uniCollectFeesTemplate,
   uniDecreaseLPTemplate,
+  uniExactInputSingleTemplate,
   uniMintTemplate,
 } from '@/templates/arbitrum/uniswap/index'
 import {
@@ -27,6 +28,10 @@ const uni = [
   {
     open: true,
     ...uniMintTemplate,
+  },
+  {
+    open: true,
+    ...uniExactInputSingleTemplate,
   },
 ]
 
