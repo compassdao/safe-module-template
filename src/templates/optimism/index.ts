@@ -1,63 +1,69 @@
-import { aave3DepositTemplate, aave3RepayTemplate, aave3WithdrawTemplate } from '@/templates/optimism/aave/index'
-import { uniCollectFeesTemplate, uniDecreaseLPTemplate, uniMintTemplate } from '@/templates/optimism/uniswap/index'
-import { sushiCollectFeesTemplate, sushiDecreaseLPTemplate, sushiMintTemplate } from '@/templates/optimism/sushi/index'
+import {
+  aave3DepositTemplate,
+  aave3RepayTemplate,
+  aave3WithdrawTemplate,
+} from '@/templates/optimism/aave/index'
+import {
+  uniCollectFeesTemplate,
+  uniDecreaseLPTemplate,
+  uniMintTemplate,
+} from '@/templates/optimism/uniswap/index'
+import {
+  sushiCollectFeesTemplate,
+  sushiDecreaseLPTemplate,
+  sushiMintTemplate,
+} from '@/templates/optimism/sushi/index'
 
 import { TemplatesController } from '@/typings/index'
-
 
 const uni = [
   {
     open: true,
-    ...uniCollectFeesTemplate
+    ...uniCollectFeesTemplate,
   },
   {
     open: true,
-    ...uniDecreaseLPTemplate
+    ...uniDecreaseLPTemplate,
   },
   {
     open: true,
-    ...uniMintTemplate
+    ...uniMintTemplate,
   },
 ]
 
 const aave = [
   {
     open: true,
-    ...aave3DepositTemplate
+    ...aave3DepositTemplate,
   },
   {
     open: true,
-    ...aave3RepayTemplate
+    ...aave3RepayTemplate,
   },
   {
     open: true,
-    ...aave3WithdrawTemplate
+    ...aave3WithdrawTemplate,
   },
 ]
 
 const sushi = [
   {
     open: true,
-    ...sushiCollectFeesTemplate
+    ...sushiCollectFeesTemplate,
   },
   {
     open: true,
-    ...sushiDecreaseLPTemplate
+    ...sushiDecreaseLPTemplate,
   },
   {
     open: true,
-    ...sushiMintTemplate
+    ...sushiMintTemplate,
   },
 ]
 
-
 export const optimismTemplatesController: TemplatesController = {
   open: true,
-  templates: [
-    ...uni,
-    ...aave,
-    ...sushi,
-  ]
+  templates: [...uni, ...aave, ...sushi],
 }
 
 export default optimismTemplatesController

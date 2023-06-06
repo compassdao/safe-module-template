@@ -1,61 +1,68 @@
-import { uniCollectFeesTemplate, uniDecreaseLPTemplate, uniMintTemplate } from "@/templates/arbitrum/uniswap/index"
-import { aave3DepositTemplate, aave3RepayTemplate, aave3WithdrawTemplate } from "@/templates/arbitrum/aave/index"
-import { sushiMintTemplate, sushiDecreaseLPTemplate, sushiCollectFeesTemplate } from "@/templates/arbitrum/sushi/index"
+import {
+  uniCollectFeesTemplate,
+  uniDecreaseLPTemplate,
+  uniMintTemplate,
+} from '@/templates/arbitrum/uniswap/index'
+import {
+  aave3DepositTemplate,
+  aave3RepayTemplate,
+  aave3WithdrawTemplate,
+} from '@/templates/arbitrum/aave/index'
+import {
+  sushiMintTemplate,
+  sushiDecreaseLPTemplate,
+  sushiCollectFeesTemplate,
+} from '@/templates/arbitrum/sushi/index'
 import { TemplatesController } from '@/typings'
 
 const uni = [
   {
     open: true,
-    ...uniCollectFeesTemplate
+    ...uniCollectFeesTemplate,
   },
   {
     open: true,
-    ...uniDecreaseLPTemplate
+    ...uniDecreaseLPTemplate,
   },
   {
     open: true,
-    ...uniMintTemplate
+    ...uniMintTemplate,
   },
 ]
 
 const aaveV3 = [
   {
     open: true,
-    ...aave3DepositTemplate
+    ...aave3DepositTemplate,
   },
   {
     open: true,
-    ...aave3RepayTemplate
+    ...aave3RepayTemplate,
   },
   {
     open: true,
-    ...aave3WithdrawTemplate
+    ...aave3WithdrawTemplate,
   },
 ]
 
 const sushi = [
   {
     open: true,
-    ...sushiMintTemplate
+    ...sushiMintTemplate,
   },
   {
     open: true,
-    ...sushiDecreaseLPTemplate
+    ...sushiDecreaseLPTemplate,
   },
   {
     open: true,
-    ...sushiCollectFeesTemplate
+    ...sushiCollectFeesTemplate,
   },
 ]
 
 export const arbitrumTemplatesController: TemplatesController = {
   open: true,
-  templates: [
-    ...uni,
-    ...sushi,
-    ...aaveV3,
-  ]
+  templates: [...uni, ...sushi, ...aaveV3],
 }
 
 export default arbitrumTemplatesController
-
