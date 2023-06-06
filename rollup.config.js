@@ -6,14 +6,15 @@ import { uglify } from 'rollup-plugin-uglify'
 import { terser } from 'rollup-plugin-terser'
 import alias from 'rollup-plugin-alias'
 import path from 'path'
+import pk from './package.json'
 
 const pathResolve = (p) => path.resolve(__dirname, p)
 
 export default {
   input: 'src/index.ts',
   output: [
-    { file: 'dist/index.cjs.js', format: 'cjs' },
-    { file: 'dist/index.esm.js', format: 'es' },
+    { file: pk.main, format: 'cjs' },
+    { file: pk.module, format: 'es' },
   ],
   plugins: [
     json(),
