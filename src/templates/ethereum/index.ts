@@ -1,64 +1,68 @@
-
-import { uniCollectFeesTemplate, uniDecreaseLPTemplate, uniMintTemplate } from '@/templates/ethereum/uniswap/index'
+import {
+  uniCollectFeesTemplate,
+  uniDecreaseLPTemplate,
+  uniExactInputSingleTemplate,
+  uniMintTemplate,
+} from '@/templates/ethereum/uniswap/index'
 import {
   aave2DepositTemplate,
   aave2RepayTemplate,
   aave2WithdrawTemplate,
   aave3DepositTemplate,
   aave3RepayTemplate,
-  aave3WithdrawTemplate
+  aave3WithdrawTemplate,
 } from '@/templates/ethereum/aave/index'
 import { TemplatesController } from '@/typings/index'
 
 const uni = [
   {
     open: true,
-    ...uniCollectFeesTemplate
+    ...uniCollectFeesTemplate,
   },
   {
     open: true,
-    ...uniDecreaseLPTemplate
+    ...uniDecreaseLPTemplate,
   },
   {
     open: true,
-    ...uniMintTemplate
+    ...uniMintTemplate,
+  },
+  {
+    open: true,
+    ...uniExactInputSingleTemplate,
   },
 ]
 
 const aave = [
   {
     open: true,
-    ...aave2DepositTemplate
+    ...aave2DepositTemplate,
   },
   {
     open: true,
-    ...aave2RepayTemplate
+    ...aave2RepayTemplate,
   },
   {
     open: true,
-    ...aave2WithdrawTemplate
+    ...aave2WithdrawTemplate,
   },
   {
     open: true,
-    ...aave3DepositTemplate
+    ...aave3DepositTemplate,
   },
   {
     open: true,
-    ...aave3RepayTemplate
+    ...aave3RepayTemplate,
   },
   {
     open: true,
-    ...aave3WithdrawTemplate
+    ...aave3WithdrawTemplate,
   },
 ]
 
-
 export const ethereumTemplatesController: TemplatesController = {
   open: true,
-  templates: [
-    ...uni,
-    ...aave,
-  ]
+  templates: [...uni, ...aave],
 }
 
 export default ethereumTemplatesController

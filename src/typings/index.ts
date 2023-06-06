@@ -1,57 +1,57 @@
 export enum ChainId {
-    ETHEREUM = 1,
-    GÖERLI = 5,
-    POLYGON = 137,
-    ARBITRUM = 42161,
-    OPTIMISM = 10,
+  ETHEREUM = 1,
+  GÖERLI = 5,
+  POLYGON = 137,
+  ARBITRUM = 42161,
+  OPTIMISM = 10,
 }
 
 export enum Comparison {
-    Eq,
-    Gte,
-    Lte
+  Eq,
+  Gte,
+  Lte,
 }
 
 export interface FunctionParams {
-    index: number,
-    value?: string
-    autoFillingSafeAddress?: boolean
-    require?: boolean
-    const?: boolean
-    comparison?: Comparison
+  index: number
+  value?: string
+  autoFillingSafeAddress?: boolean
+  require?: boolean
+  const?: boolean
+  comparison?: Comparison
 }
 
 export interface EthValue {
-    value?: string,
-    comparison?: Comparison.Lte
+  value?: string
+  comparison?: Comparison.Lte
 }
 
 export interface FunctionConfig {
-    sighash: string,
-    params?: Array<FunctionParams>
-    ethValue?: EthValue
+  sighash: string
+  params?: Array<FunctionParams>
+  ethValue?: EthValue
 }
 
 export interface Template {
-    id: string,
-    chainId: ChainId,
-    templateName: string,
-    contractAddress: string,
-    functionsConfig: Array<FunctionConfig>
+  id: string
+  chainId: ChainId
+  templateName: string
+  contractAddress: string
+  functionsConfig: Array<FunctionConfig>
 }
 
 export interface Controller {
-    open?: boolean
+  open?: boolean
 }
 
-export interface TemplateController extends Template, Controller { }
+export interface TemplateController extends Template, Controller {}
 
 export interface TemplatesController extends Controller {
-    templates: Array<TemplateController>
+  templates: Array<TemplateController>
 }
 
 export interface MasterController extends Controller {
-    templates: {
-        [chainId: number]: TemplatesController
-    }
+  templates: {
+    [chainId: number]: TemplatesController
+  }
 }

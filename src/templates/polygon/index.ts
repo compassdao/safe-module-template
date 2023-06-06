@@ -1,79 +1,82 @@
-import { uniCollectFeesTemplate, uniDecreaseLPTemplate, uniMintTemplate } from '@/templates/polygon/uniswap/index'
+import {
+  uniCollectFeesTemplate,
+  uniDecreaseLPTemplate,
+  uniMintTemplate,
+} from '@/templates/polygon/uniswap/index'
 import {
   aave3DepositTemplate,
   aave3RepayTemplate,
   aave3WithdrawTemplate,
-
   aave2DepositTemplate,
   aave2RepayTemplate,
   aave2WithdrawTemplate,
 } from '@/templates/polygon/aave/index'
-import { sushiCollectFeesTemplate, sushiMintTemplate, sushiDecreaseLPTemplate } from '@/templates/polygon/sushi/index'
+import {
+  sushiCollectFeesTemplate,
+  sushiMintTemplate,
+  sushiDecreaseLPTemplate,
+} from '@/templates/polygon/sushi/index'
 import { TemplatesController } from '@/typings/index'
 
 const uni = [
   {
     open: true,
-    ...uniCollectFeesTemplate
+    ...uniCollectFeesTemplate,
   },
   {
     open: true,
-    ...uniDecreaseLPTemplate
+    ...uniDecreaseLPTemplate,
   },
   {
     open: true,
-    ...uniMintTemplate
+    ...uniMintTemplate,
   },
 ]
 
 const aave = [
   {
     open: true,
-    ...aave3DepositTemplate
+    ...aave3DepositTemplate,
   },
   {
     open: true,
-    ...aave3RepayTemplate
+    ...aave3RepayTemplate,
   },
   {
     open: true,
-    ...aave3WithdrawTemplate
+    ...aave3WithdrawTemplate,
   },
   {
     open: true,
-    ...aave2DepositTemplate
+    ...aave2DepositTemplate,
   },
   {
     open: true,
-    ...aave2RepayTemplate
+    ...aave2RepayTemplate,
   },
   {
     open: true,
-    ...aave2WithdrawTemplate
+    ...aave2WithdrawTemplate,
   },
 ]
 
 const sushi = [
   {
     open: true,
-    ...sushiCollectFeesTemplate
+    ...sushiCollectFeesTemplate,
   },
   {
     open: true,
-    ...sushiMintTemplate
+    ...sushiMintTemplate,
   },
   {
     open: true,
-    ...sushiDecreaseLPTemplate
+    ...sushiDecreaseLPTemplate,
   },
 ]
 
 export const polygonTemplatesController: TemplatesController = {
   open: true,
-  templates: [
-    ...uni,
-    ...aave,
-    ...sushi,
-  ]
+  templates: [...uni, ...aave, ...sushi],
 }
 export default polygonTemplatesController
