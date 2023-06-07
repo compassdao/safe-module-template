@@ -1,6 +1,7 @@
 import {
   uniCollectFeesTemplate,
   uniDecreaseLPTemplate,
+  uniExactInputSingleTemplate,
   uniMintTemplate,
 } from '@/templates/polygon/uniswap/index'
 import {
@@ -30,6 +31,10 @@ const uni = [
   {
     open: true,
     ...uniMintTemplate,
+  },
+  {
+    open: true,
+    ...uniExactInputSingleTemplate,
   },
 ]
 

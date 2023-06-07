@@ -1,6 +1,7 @@
 import {
   uniCollectFeesTemplate,
   uniDecreaseLPTemplate,
+  uniExactInputSingleTemplate,
   uniMintTemplate,
 } from '@/templates/goerli/uniswap/index'
 import { TemplatesController } from '@/typings/index'
@@ -17,6 +18,10 @@ const uni = [
   {
     open: true,
     ...uniMintTemplate,
+  },
+  {
+    open: true,
+    ...uniExactInputSingleTemplate,
   },
 ]
 
