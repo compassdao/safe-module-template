@@ -15,6 +15,7 @@ import {
   sushiCollectFeesTemplate,
 } from '@/templates/arbitrum/sushi/index'
 import { TemplatesController } from '@/typings'
+import { $1inchSwapTemplate } from './1inch'
 
 const uni = [
   {
@@ -65,9 +66,16 @@ const sushi = [
   },
 ]
 
+const $1inch = [
+  {
+    open: true,
+    ...$1inchSwapTemplate,
+  },
+]
+
 export const arbitrumTemplatesController: TemplatesController = {
   open: true,
-  templates: [...uni, ...sushi, ...aaveV3],
+  templates: [...uni, ...sushi, ...aaveV3, ...$1inch],
 }
 
 export default arbitrumTemplatesController
