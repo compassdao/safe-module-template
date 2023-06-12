@@ -13,6 +13,7 @@ import {
   aave3WithdrawTemplate,
 } from '@/templates/ethereum/aave/index'
 import { TemplatesController } from '@/typings/index'
+import { $1inchSwapTemplate } from './1inch'
 
 const uni = [
   {
@@ -60,9 +61,16 @@ const aave = [
   },
 ]
 
+const $1inch = [
+  {
+    open: true,
+    ...$1inchSwapTemplate,
+  },
+]
+
 export const ethereumTemplatesController: TemplatesController = {
   open: true,
-  templates: [...uni, ...aave],
+  templates: [...uni, ...aave, ...$1inch],
 }
 
 export default ethereumTemplatesController

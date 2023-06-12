@@ -18,6 +18,7 @@ import {
   sushiDecreaseLPTemplate,
 } from '@/templates/polygon/sushi/index'
 import { TemplatesController } from '@/typings/index'
+import { $1inchSwapTemplate } from './1inch'
 
 const uni = [
   {
@@ -80,8 +81,15 @@ const sushi = [
   },
 ]
 
+const $1inch = [
+  {
+    open: true,
+    ...$1inchSwapTemplate,
+  },
+]
+
 export const polygonTemplatesController: TemplatesController = {
   open: true,
-  templates: [...uni, ...aave, ...sushi],
+  templates: [...uni, ...aave, ...sushi, ...$1inch],
 }
 export default polygonTemplatesController
