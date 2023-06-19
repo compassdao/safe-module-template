@@ -30,28 +30,29 @@ export const $1inchSwapTemplate: Template = {
       sighash: '0x12aa3caf', // swap
       params: [
         {
-          index: 0, // executor
-          require: false,
-        },
-        {
-          index: 1, // srcToken
-          require: true,
-          comparison: Comparison.Eq,
-        },
-        {
-          index: 2, // dstToken
-          require: true,
-          comparison: Comparison.Eq,
-        },
-        {
-          index: 3, // srcReceiver
-          require: true,
-          comparison: Comparison.Eq,
-        },
-        {
-          index: 4, // dstReceiver
-          require: true,
-          comparison: Comparison.Eq,
+          index: 1, // desc
+          params: [
+            {
+              index: 0, // srcToken
+              require: true,
+              comparison: Comparison.Eq,
+            },
+            {
+              index: 1, // dstToken
+              require: true,
+              comparison: Comparison.Eq,
+            },
+            {
+              index: 2, // srcReceiver
+              require: true,
+              comparison: Comparison.Eq,
+            },
+            {
+              index: 3, // dstReceiver
+              require: true,
+              comparison: Comparison.Eq,
+            },
+          ],
         },
       ],
     },
