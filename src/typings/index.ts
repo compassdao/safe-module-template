@@ -19,6 +19,7 @@ export interface FunctionParams {
   require?: boolean
   const?: boolean
   comparison?: Comparison
+  params?: Array<FunctionParams>
 }
 
 export interface EthValue {
