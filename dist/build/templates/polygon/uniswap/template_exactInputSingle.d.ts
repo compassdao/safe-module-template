@@ -1,2 +1,2 @@
-import { Template } from "@/typings";
+import { Template } from '@/typings';
 export declare const uniExactInputSingleTemplate: Template;
