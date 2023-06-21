@@ -3,7 +3,7 @@ import { generateUniqueId } from '@/utils'
 
 export const $1inchSwapTemplate: Template = {
   id: generateUniqueId(),
-  chainId: ChainId.POLYGON,
+  chainId: ChainId.ARBITRUM,
   templateName: '1inch Swap',
   contractAddress: '0x1111111254eeb25477b68fb85ed929f73a960582',
   functionsConfig: [
