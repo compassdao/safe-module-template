@@ -16,12 +16,12 @@ export const $1inchSwapTemplate: Template = {
         },
         {
           index: 1, // srcToken
-          require: true,
+          require: false,
           comparison: Comparison.Eq,
         },
         {
           index: 2, // dstToken
-          require: true,
+          require: false,
           comparison: Comparison.Eq,
         },
       ],
@@ -44,15 +44,31 @@ export const $1inchSwapTemplate: Template = {
             },
             {
               index: 2, // srcReceiver
-              require: true,
+              require: false,
               comparison: Comparison.Eq,
             },
             {
               index: 3, // dstReceiver
               require: true,
               comparison: Comparison.Eq,
+              autoFillingSafeAddress: true,
             },
           ],
+        },
+      ],
+    },
+    {
+      sighash: '0x0502b1c5', // unoswap
+      params: [
+        {
+          index: 0, // srcToken
+          require: false,
+          comparison: Comparison.Eq,
+        },
+        {
+          index: 3, // pools
+          require: false,
+          comparison: Comparison.Eq,
         },
       ],
     },
