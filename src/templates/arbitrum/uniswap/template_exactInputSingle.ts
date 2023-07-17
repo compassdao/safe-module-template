@@ -11,25 +11,30 @@ export const uniExactInputSingleTemplate: Template = {
       sighash: '0x04e45aaf',
       params: [
         {
-          index: 0, // tokenIn
-          require: true,
-          comparison: Comparison.Eq,
-        },
-        {
-          index: 1, // tokenOut
-          require: true,
-          comparison: Comparison.Eq,
-        },
-        {
-          index: 2, // fee
-          require: true,
-          comparison: Comparison.Eq,
-        },
-        {
-          index: 3, // recipient
-          require: true,
-          comparison: Comparison.Eq,
-          autoFillingSafeAddress: true,
+          index: 0,
+          params: [
+            {
+              index: 0, // tokenIn
+              require: true,
+              comparison: Comparison.Eq,
+            },
+            {
+              index: 1, // tokenOut
+              require: true,
+              comparison: Comparison.Eq,
+            },
+            {
+              index: 2, // fee
+              require: true,
+              comparison: Comparison.Eq,
+            },
+            {
+              index: 3, // recipient
+              require: true,
+              comparison: Comparison.Eq,
+              autoFillingSafeAddress: true,
+            },
+          ],
         },
       ],
     },

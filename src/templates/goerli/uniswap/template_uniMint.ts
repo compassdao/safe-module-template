@@ -12,15 +12,20 @@ export const uniMintTemplate: Template = {
       params: [
         {
           index: 0,
-          require: false,
-        },
-        {
-          index: 1,
-          require: false,
-        },
-        {
-          index: 9,
-          autoFillingSafeAddress: true,
+          params: [
+            {
+              index: 0,
+              require: false,
+            },
+            {
+              index: 1,
+              require: false,
+            },
+            {
+              index: 9,
+              autoFillingSafeAddress: true,
+            },
+          ],
         },
       ],
     },

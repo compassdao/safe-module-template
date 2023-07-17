@@ -11,9 +11,14 @@ export const uniCollectFeesTemplate: Template = {
       sighash: '0xfc6f7865',
       params: [
         {
-          index: 1,
-          autoFillingSafeAddress: true,
-          require: true,
+          index: 0,
+          params: [
+            {
+              index: 1,
+              autoFillingSafeAddress: true,
+              require: true,
+            },
+          ],
         },
       ],
     },

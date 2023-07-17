@@ -11,9 +11,13 @@ export const sushiMintTemplate: Template = {
       sighash: '0x88316456',
       params: [
         {
-          index: 9,
-          value: '',
-          autoFillingSafeAddress: true,
+          index: 0,
+          params: [
+            {
+              index: 9,
+              autoFillingSafeAddress: true,
+            },
+          ],
         },
       ],
     },
