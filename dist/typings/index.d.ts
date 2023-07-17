@@ -21,7 +21,7 @@ export interface FunctionParams {
 }
 export interface EthValue {
     value?: string;
-    comparison?: Comparison.Lte;
+    comparison?: Comparison;
 }
 export interface FunctionConfig {
     sighash: string;
@@ -44,7 +44,5 @@ export interface TemplatesController extends Controller {
     templates: Array<TemplateController>;
 }
 export interface MasterController extends Controller {
-    templates: {
-        [chainId: number]: TemplatesController;
-    };
+    templates: Record<ChainId, TemplatesController>;
 }
