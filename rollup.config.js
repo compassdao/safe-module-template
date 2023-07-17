@@ -11,7 +11,7 @@ import pk from './package.json'
 const pathResolve = (p) => path.resolve(__dirname, p)
 
 export default {
-  input: 'src/index.ts',
+  input: pathResolve('src/index.ts'),
   output: [
     { file: pk.main, format: 'cjs' },
     { file: pk.module, format: 'es' },
