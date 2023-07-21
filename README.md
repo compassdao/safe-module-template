@@ -11,11 +11,14 @@ import { generateUniqueId } from '@/utils'
 ```
 ### Step 2: Create Template Object
 Next, we need to create a template object. This object needs to include the following properties:
-- id: The unique identifier of the template, which can be generated using the generateUniqueId function.
-- chainId: The ID of the chain, such as ChainId.ARBITRUM.
-- templateName: The name of the template.
-- contractAddress: The address of the smart contract.
-- functionsConfig: An array of function configurations.
+
+| Parameter | Type | Required | Description |
+| --- | --- | --- | --- |
+| id | String | Yes | The unique identifier of the template, which can be generated using the generateUniqueId function. | - |
+| chainId | ChainId | Yes | The ID of the chain, such as ChainId.ARBITRUM. |
+| templateName | String | Yes | The name of the template. | - |
+| contractAddress | String | Yes | The address of the smart contract. |
+| functionsConfig | Array | Yes | An array of function configurations. |
 
 ```ts
 export const uniExactInputSingleTemplate: Template = {
@@ -29,13 +32,38 @@ export const uniExactInputSingleTemplate: Template = {
 ### Step 3: Configure Functions
 In the functionsConfig array, we need to configure an object for each function. This object needs to include the following properties:
 
-- sighash: The signature hash of the function.
-- params: This field is only used when there is a tuple type in the current function parameters.
-- index: The index of the parameter.
-- autoFillingSafeAddress: Whether to automatically fill in the safe address.
-- require: Is it necessary to fill in? If true, the UI page will prompt in red, if false, it will prompt in yellow. If this field is not filled in, there will be no prompt.
-- value: What is the value of the current parameter.
-- comparison: Current parameter operator
+| Parameter | Type | Required | Description | Nested Parameters |
+| --- | --- | --- | --- | --- |
+| sighash | String | Yes | The signature hash of the function. | - |
+| ethValue | Object | No | The signature hash of the function. | <table style="border-collapse: collapse"><thead><tr><th style="border: 1px solid black; text-align: center">Parmeter</th><th style="border: 1px solid black; text-align: center">Type</th><th style="border: 1px solid black; text-align: center">Required</th><th style="border: 1px solid black; text-align: center">Description</th><th style="border: 1px solid black; text-align: center">Nested Parameters</th></tr></thead><tr><td style="border: 1px solid black; text-align: center">value</td><td style="border: 1px solid black; text-align: center">String</td><td style="border: 1px solid black; text-align: center">No</td><td style="border: 1px solid black; text-align: center">The current value of ethValue.</td><td style="border: 1px solid black; text-align: center">-</td></tr><tr><td style="border: 1px solid black; text-align: center">comparison</td><td style="border: 1px solid black; text-align: center">Comparison</td><td style="border: 1px solid black; text-align: center">No</td><td style="border: 1px solid black; text-align: center">The current operator of ethValue, currently only supports Comparison.Eq (equal to).</td><td style="border: 1px solid black; text-align: center">-</td></tr></table> |
+| params | Array |  No | The parameter array of the current function. | <table style="border-collapse: collapse;"><thead><tr><th style="border: 1px solid black;text-align: center;">Parmeter</th><th style="border: 1px solid black;text-align: center;">Type</th><th style="border: 1px solid black;text-align: center;">Required</th><th style="border: 1px solid black;text-align: center;">Description</th><th style="border: 1px solid black;text-align: center;">Nested Parameters</th></tr></thead><tr><td style="border: 1px solid black;text-align: center;">index</td><td style="border: 1px solid black;text-align: center;">Number</td><td style="border: 1px solid black;text-align: center;">Yes</td><td style="border: 1px solid black;text-align: center;">The index of the parameter.</td><td style="border: 1px solid black;text-align: center;">-</td></tr><tr><td style="border: 1px solid black;text-align: center;">autoFillingSafeAddress</td><td style="border: 1px solid black;text-align: center;">Boolean</td><td style="border: 1px solid black;text-align: center;">No</td><td style="border: 1px solid black;text-align: center;">Whether to automatically fill in the safe address.</td><td style="border: 1px solid black;text-align: center;">-</td></tr><tr><td style="border: 1px solid black;text-align: center;">require</td><td style="border: 1px solid black;text-align: center;">Boolean</td><td style="border: 1px solid black;text-align: center;">No</td><td style="border: 1px solid black;text-align: center;">Is it necessary to fill in? If true, the UI page will prompt in red, if false, it will prompt in yellow. If this field is not filled in, there will be no prompt.</td><td style="border: 1px solid black;text-align: center;">-</td></tr><tr><td style="border: 1px solid black;text-align: center;">value</td><td style="border: 1px solid black;text-align: center;">String</td><td style="border: 1px solid black;text-align: center;">No</td><td style="border: 1px solid black;text-align: center;">What is the value of the current parameter</td><td style="border: 1px solid black;text-align: center;">-</td></tr><tr><td style="border: 1px solid black;text-align: center;">comparison</td><td style="border: 1px solid black;text-align: center;">Comparison</td><td style="border: 1px solid black;text-align: center;">No</td><td style="border: 1px solid black;text-align: center;">Current parameter operator. There are three types of operators in total" are Comparison.Eq (equal to), Comparison.Lte (less than or equal to), and Comparison.Gte (greater than or equal to).</td><td style="border: 1px solid black;text-align: center;">-</td></tr><tr><td style="border: 1px solid black;text-align: center;">params</td><td style="border: 1px solid black;text-align: center;">Boolean</td><td style="border: 1px solid black;text-align: center;">No</td><td style="border: 1px solid black;text-align: center;">This field is only used when there is a tuple type in the current function parameters. The parameters in the array are the same as the parent params.</td><td style="border: 1px solid black;text-align: center;">The parameters in the array are the same as the parent params.</td></tr></table>  |
+
+```ts
+const functionsConfig = [
+  {
+    sighash: '0x04e45aaf', // This function only has one parameter and it is of tuple type.
+    params:[
+      {
+        index: 0,
+        params:[
+          {
+            index: 3,
+            require: true,
+            autoFillingSafeAddress: true,
+          }
+        ]
+      }
+    ]
+  }
+]
+export const uniExactInputSingleTemplate: Template = {
+  id: generateUniqueId(),
+  chainId: ChainId.POLYGON,
+  templateName: 'Uniswap V3 Router2 ExactInputSingle',
+  contractAddress: '0x68b3465833fb72A70ecDF485E0e4C7bD8665Fc45',
+  functionsConfig: functionsConfig,
+}
+```
 ### Complete Example
 
 ```ts
