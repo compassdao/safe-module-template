@@ -10,19 +10,19 @@ export declare enum Comparison {
     Gte = 1,
     Lte = 2
 }
-export interface FunctionParams {
+export type FunctionParams = {
     index: number;
     value?: string;
     autoFillingSafeAddress?: boolean;
     require?: boolean;
     const?: boolean;
     comparison?: Comparison;
-    params?: Array<FunctionParams>;
-}
-export interface EthValue {
+    params?: FunctionParams[];
+};
+export type EthValue = {
     value?: string;
     comparison?: Comparison;
-}
+};
 export interface FunctionConfig {
     sighash: string;
     params?: Array<FunctionParams>;
@@ -35,11 +35,10 @@ export interface Template {
     contractAddress: string;
     functionsConfig: Array<FunctionConfig>;
 }
-export interface Controller {
+export type Controller = {
     open?: boolean;
-}
-export interface TemplateController extends Template, Controller {
-}
+};
+export type TemplateController = Template & Controller;
 export interface TemplatesController extends Controller {
     templates: Array<TemplateController>;
 }
