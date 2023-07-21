@@ -14,21 +14,19 @@ export enum Comparison {
   Lte, // <
 }
 
-// Interface describing function parameters
-export interface FunctionParams {
-  index: number // Index of the parameter
-  value?: string // Value of the parameter
-  autoFillingSafeAddress?: boolean // Whether to auto-fill safe address
-  require?: boolean // Whether it is required
-  const?: boolean // Whether it is a constant
-  comparison?: Comparison // Comparison operation
-  params?: Array<FunctionParams> // Nested function parameters
+export type FunctionParams = {
+  index: number
+  value?: string
+  autoFillingSafeAddress?: boolean
+  require?: boolean
+  const?: boolean
+  comparison?: Comparison
+  params?: FunctionParams[]
 }
 
-// Interface describing Ethereum value
-export interface EthValue {
-  value?: string // Value
-  comparison?: Comparison // Comparison operation
+export type EthValue = {
+  value?: string
+  comparison?: Comparison
 }
 
 // Interface describing function configuration
@@ -47,13 +45,11 @@ export interface Template {
   functionsConfig: Array<FunctionConfig> // Function configurations
 }
 
-// Interface describing a controller
-export interface Controller {
+export type Controller = {
   open?: boolean // Whether it is open
 }
 
-// Interface describing a template controller, extends Template and Controller
-export interface TemplateController extends Template, Controller {}
+export type TemplateController = Template & Controller;
 
 // Interface describing templates controller, extends Controller
 export interface TemplatesController extends Controller {
