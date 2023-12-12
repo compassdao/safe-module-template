@@ -1,3 +1,5 @@
+import { TemplatesController } from '@/typings/index'
+import { createTemplateArray } from '@/utils'
 import {
   uniCollectFeesTemplate,
   uniDecreaseLPTemplate,
@@ -12,9 +14,20 @@ import {
   aave3RepayTemplate,
   aave3WithdrawTemplate,
 } from '@/templates/ethereum/aave/index'
-import { TemplatesController } from '@/typings/index'
 import { $1inchSwapTemplate } from './1inch'
-import { createTemplateArray } from '@/utils'
+import { 
+  lidoClaimWithdrawalsTemplate,
+  lidoRequestWithdrawalsWstETHTemplate,
+  lidoSubmitTemplate,
+  lidoWrapTemplate,
+} from './lido'
+import {
+  sparkBorrowTemplate,
+  sparkRepayTemplate,
+  sparkSupplyTemplate,
+  sparkWithdrawTemplate,
+  } from './spark'
+
 
 // The 'uni' constant is an array of template objects created by the 'createTemplateArray' function.
 // The first argument is an array of templates related to Uniswap operations.
@@ -44,9 +57,29 @@ const aave = createTemplateArray(
 
 const $1inch = createTemplateArray([$1inchSwapTemplate], [true])
 
+const lido = createTemplateArray(
+  [
+    lidoClaimWithdrawalsTemplate,
+    lidoRequestWithdrawalsWstETHTemplate,
+    lidoSubmitTemplate,
+    lidoWrapTemplate,
+  ],
+  [true, true, true, true]
+)
+
+const spark = createTemplateArray(
+  [
+    sparkBorrowTemplate,
+    sparkRepayTemplate,
+    sparkSupplyTemplate,
+    sparkWithdrawTemplate,
+  ],
+  [true, true, true, true]
+)
+
 export const ethereumTemplatesController: TemplatesController = {
   open: true,
-  templates: [...uni, ...aave, ...$1inch],
+  templates: [...uni, ...aave, ...$1inch, ...lido, ...spark],
 }
 
 export default ethereumTemplatesController
